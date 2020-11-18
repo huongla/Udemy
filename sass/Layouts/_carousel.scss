@@ -1,0 +1,94 @@
+.carousel {
+    background-image: url("../img/cover.jpg");
+    // background-image: url("../../img/cover.jpg"); chỉ hiển thị khi chạy live Server
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    .carousel__content {
+        width: 95%;
+        margin: 0 auto;
+        .carousel_text {
+            h3 {
+                @include styleText($color-white-0, $fs-4 - 5, $fw-bold-1);
+            }
+            p {
+                @include styleText($color-white-0, $fs-2 - 2, $fw-normal);
+            }
+            .carousel__form {
+                border-radius: $border-radius;
+                .input-group {
+                    .form-control {
+                        padding: $pd-2 + 2;
+                        border: none;
+                        &::placeholder {
+                            @include styleText($color-gray-4, $fs-2, $fw-light);
+                        }
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+                    .input-group-append {
+                        .input-group-text {
+                            background-color: $color-white-0;
+                            @include styleText($color-red-0, $fs-2, $fw-normal);
+                            border: none;
+                            padding: 0 $pd-1 + 5;
+                        }
+                        &:hover {
+                            .input-group-text {
+                                background-color: $color-red-0;
+                                color: $color-white-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//responsive
+
+@include responsive("extra-large") {
+    .carousel .carousel__content {
+        width: 90%;
+    }
+}
+@include responsive("large") {
+    .carousel .carousel__content {
+        width: 87%;
+    }
+}
+@include responsive("medium") {
+    .carousel .carousel__content {
+        width: 100%;
+        margin: 0;
+    }
+}
+@include responsive("small") {
+    .carousel {
+        height: 300px;
+        .carousel__content {
+            width: 100%;
+            margin: 0 auto;
+            .carousel_text {
+                h3 {
+                    font-size: $fs-3;
+                    font-weight: normal;
+                }
+                .carousel__form {
+                    .input-group {
+                        .form-control {
+                            &::placeholder {
+                                font-size: $fs-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

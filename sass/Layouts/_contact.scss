@@ -1,0 +1,48 @@
+.contact__content {
+    margin: $mg-3;
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: $mg-1 - 4;
+            a {
+                text-decoration: none;
+                @include styleText($color-blue, $fs-1, $fw-normal);
+                transition: all 0.5s;
+                &:hover {
+                    color: $color-black-1;
+                    outline: none;
+                }
+            }
+        }
+    }
+    // .contact__btn{
+    //
+
+    // }
+    .contact__btn {
+        text-align: right;
+        a {
+            text-decoration: none;
+            @include styleText($color-gray-4, $fs-1, $fw-bold);
+            padding: $pd-1 $pd-2;
+            border: 1px solid $color-gray-4;
+            transition: all 0.5s;
+            &:hover {
+                color: $color-black-0;
+                border: 1px solid $color-black-0;
+            }
+        }
+    }
+}
+
+// resopnsive
+@include responsive("medium") {
+    .contact__content {
+        .contact_left {
+            display: none;
+        }
+        .contact__btn {
+            text-align: left;
+        }
+    }
+}

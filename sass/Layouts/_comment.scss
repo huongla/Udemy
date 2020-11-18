@@ -1,0 +1,46 @@
+.comment{
+    background: $color-gray-5;
+    .comment__content{
+        width: 90%;
+        margin: auto;
+        h3{
+            @include styleText($color-black-0,$fs-3,$fw-bold-1);
+            padding-top: $pd-3;
+        }
+        .comment__item{
+            padding: $pd-2 $pd-2 - 2;
+            background-color: $color-white-0;
+            box-shadow: 0 0px 1px 1px rgba(20, 23, 28, 0.1), 0 1px 1px 0 rgba(20, 23, 28, 0.1);
+            border: 1px solid  $color-gray-5;
+            height: 100%;
+            .comment__item-title{
+                display: flex;
+                align-items: center;
+                img, span:first-child{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                }
+                span:first-child{
+                    background-color: $color-gray-4;
+                    @include styleText($color-white-0,$fs-0,$fw-bold);
+                    line-height: 70px;
+                    text-align: center;
+                }
+                span:last-child{
+                    @include styleText($color-black-0,$fs-0 + 1,$fw-bold-1); 
+                    margin-left: $mg-1;
+                }
+            }
+            .comment__item-describe{
+                p{
+                    @include styleText($color-black-1,$fs-0,$fw-normal);  
+                    margin-top: $mg-1;
+                    word-spacing: 1px;
+                    padding-bottom: $pd-2;
+                    align-content: stretch;
+                }
+            }
+        }
+    }
+}

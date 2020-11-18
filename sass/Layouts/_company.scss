@@ -1,0 +1,89 @@
+.company{
+    background: $color-gray-5;
+    .company__content{
+        width: 80%;
+        margin: auto;
+        h6{
+            @include styleText($color-black-light,$fs-0,$fw-normal);
+            padding-top: $pd-2;
+            text-align: center;
+            word-spacing: 1px;
+        }
+        .company__partner{
+            padding-top: $pd-2;
+            padding-bottom: $pd-3;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+    .company__non-student{
+        padding: $pd-3 $pd-4;
+        .company__details{
+            width: 60%;
+            word-spacing: 1px;
+            text-align: center;
+            h5{
+                @include styleText($color-black-light,$fs-2,$fw-bold);
+                padding-top: $pd-2; 
+            }
+            p{
+                @include styleText($color-black-light,$fs-0,$fw-normal);
+            }
+        }
+    }
+}
+//responsive
+@include responsive("extra-large"){
+    .company{
+        .company__content{
+            .company__partner{
+                width: 85%;
+            }
+        }
+        
+    }
+    
+}
+@include responsive("large"){
+    .company{
+        .company__content{
+            .company__partner{
+                width: 95%;
+            }
+        }
+        
+    }
+    .company{
+        .company__non-student{
+            .company__details{
+                width: 100%;
+            }
+        }
+        
+    }
+    
+}
+@include responsive("medium"){
+    .company{
+        .company__content{
+            .company__partner{
+                width: 90%;
+            }
+        }
+        
+    }
+    
+}
+@include responsive("small"){
+    .company{
+        .company__content{
+            .company__partner{
+                width: 70%;
+            }
+        }
+        
+    }
+    
+}

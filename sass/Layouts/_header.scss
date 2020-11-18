@@ -1,0 +1,164 @@
+header {
+    @include styleText($color-black-light, $fs-1, $fw-normal);
+    border-bottom: 1px solid $color-gray-3;
+    .header__line {
+        width: 100%;
+        height: 0.5rem;
+        background: linear-gradient(
+            90deg,
+            rgb(100, 91, 83) 0%,
+            rgb(235, 82, 82) 18.23%,
+            rgb(247, 143, 47) 34.37%,
+            rgb(244, 193, 81) 48.96%,
+            rgb(82, 187, 118) 66.15%,
+            rgb(38, 165, 215) 82.29%,
+            rgb(224, 105, 183) 100%
+        );
+    }
+    .header__icon-search {
+        visibility: hidden;
+        cursor: pointer;
+        @include styleText($color-gray-4, $fs-0 + 3, $fw-normal);
+        flex-grow: 0;
+    }
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    //nếu không khia báo giá trị flex-grow là 0
+
+    .navbar-brand {
+        flex-grow: 0;
+        img {
+            width: 110px;
+        }
+    }
+    .header__cato {
+        flex-grow: 0;
+        align-self: center;
+        padding: $pd-1;
+        a {
+            text-decoration: none;
+            color: $color-black-light;
+        }
+
+        &:hover {
+            background-color: $color-gray-1;
+            border: 1px solid $color-gray-1;
+        }
+    }
+    .header__form {
+        flex-grow: 1;
+        padding-left: 1rem;
+        .form-control {
+            background-color: $color-gray-1;
+            border: none;
+            transition: none;
+            font-size: $fs-1;
+            padding: $pd-2 $pd-2;
+            &:focus {
+                box-shadow: none;
+                background-color: $color-white-0;
+                border-top: 1px solid $color-gray-3;
+                border-bottom: 1px solid $color-gray-3;
+                border-left: 1px solid $color-gray-3;
+            }
+            &:focus + .input-group-append {
+                .input-group-text {
+                    color: $color-red-0;
+                    background-color: $color-white-0;
+                    border-top: 1px solid $color-gray-3;
+                    border-right: 1px solid $color-gray-3;
+                    border-bottom: 1px solid $color-gray-3;
+                }
+                &:hover {
+                    .input-group-text {
+                        color: $color-white-0;
+                        background-color: $color-red-0;
+                    }
+                }
+            }
+        }
+        .input-group-append {
+            .input-group-text {
+                background-color: $color-gray-1;
+                color: $color-red-0;
+                border: none;
+            }
+            &:hover {
+                .input-group-text {
+                    color: $color-white-0;
+                    background-color: $color-red-0;
+                }
+            }
+        }
+    }
+}
+.header__right {
+    .navbar-nav {
+        margin: 0 auto;
+        justify-content: space-evenly;
+        align-items: center;
+        .line {
+            @include styleText($color-trans, $fs-3, $fw-normal);
+            padding-right: $pd-0;
+            border-right: 1px solid $color-gray-6;
+        }
+        .nav-item {
+            .nav-link {
+                @include styleText($color-black-light, $fs-1, $fw-normal);
+                padding: $pd-1;
+            }
+            i {
+                font-size: $fs-0;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+            }
+            &:hover {
+                background-color: $color-gray-1;
+            }
+        }
+        .nav-item:nth-child(3) {
+            border-radius: 50%;
+        }
+        .ude-btnGroup {
+            padding: 0;
+        }
+    }
+}
+
+//Responsive
+@include responsive("extra-large") {
+    .header__right {
+        .business,
+        .teach,
+        .line {
+            display: none;
+        }
+    }
+}
+
+@include responsive("medium") {
+    .header__left {
+        .header__cato,
+        .header__form {
+            display: none;
+        }
+    }
+    .header__right {
+        .ude-btnGroup {
+            display: none;
+        }
+    }
+    header .header__icon-search {
+        visibility: visible;
+        padding: 0 $pd-2;
+        flex-grow: 0;
+    }
+    .header__left .navbar-brand {
+        margin: 0 auto;
+    }
+}

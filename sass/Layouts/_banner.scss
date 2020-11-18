@@ -1,0 +1,44 @@
+.banner{
+    background-color: $color-black-0;
+    .banner__line{
+        height: 7px;
+        background: linear-gradient(-45deg,#EC5252 0%,#6E1A52 100%);
+    }
+    .banner__items{
+        width: 90%;
+        margin: auto;
+        .banner__icon{
+            text-align: center;
+            @include styleText($color-white-0,$fs-3,$fw-bold-1);
+            .fa-jenkins{
+                padding-left: 5rem;
+            }
+            .fa-jsfiddle{
+                padding-right: 5rem;
+            }
+        }
+        .banner__text{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            
+            .banner__caption{
+                h3{
+                    @include styleText($color-white-0,$fs-3,$fw-bold-1);
+                    margin-bottom: $mg-1 + 6;
+                }
+                p{
+                    @include styleText($color-white-0,$fs-0 + 1,$fw-normal);
+                    margin-bottom: $mg-1 + 6;
+                }
+            }
+
+        }
+    }
+}
+//responsive
+@include responsive("large"){
+    .banner__icon{
+        visibility: hidden;
+    }
+}
